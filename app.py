@@ -6,16 +6,17 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-model = tf.keras.models.load_model('myenv312/nlp/ANN/model.h5')
 
 # Load the encoders and scaler
-with open('myenv312/nlp/ANN/lable_encoder_gender.pkl', 'rb') as file:
+model = tf.keras.models.load_model('model.h5')
+
+with open('lable_encoder_gender.pkl', 'rb') as file:
     label_encoder_gender = pickle.load(file)
 
-with open('myenv312/nlp/ANN/onehot_encoder_geo.pkl', 'rb') as file:
+with open('onehot_encoder_geo.pkl', 'rb') as file:
     onehot_encoder_geo = pickle.load(file)
 
-with open('myenv312/nlp/ANN/Scalar.pkl', 'rb') as file:
+with open('Scalar.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
 st.title('Customer Churn Prediction')
